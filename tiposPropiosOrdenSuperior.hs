@@ -18,7 +18,10 @@ esEnergizante _  = False
 
 type Nombre = String
 type Edad = Int
-data Persona = Estudiante {nom :: Nombre, edad:: Edad}
+data Persona = Estudiante {nom :: Nombre, edad:: Edad} deriving Show
 
 julia :: Persona
 julia = Estudiante "julia" 20
+
+cumplirAños :: Persona -> Persona
+cumplirAños estudiante = estudiante {edad = edad estudiante + 1}
