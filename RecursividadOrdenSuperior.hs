@@ -7,3 +7,6 @@ promediosAlumnos:: [Persona] -> [(Nombre, Int)]
 promediosAlumnos  = map (\unAlumno -> (nombre unAlumno, (promedio.notas)unAlumno)) 
 
 promedio notas = (sum notas) `div` (length notas)
+
+promediosSinAplazos :: [Notas] -> [Int]
+promediosSinAplazos  = map (promedio.filter (>=6)) 
